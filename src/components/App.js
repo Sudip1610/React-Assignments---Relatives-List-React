@@ -1,16 +1,19 @@
-import React, {Component, useState} from "react";
-import '../styles/App.css';
+import React, { Component, useState } from "react";
+import "../styles/App.css";
 
 class App extends Component {
-    render() {
-
-        return(
-            <div id="main">
-               {/* Do not remove the main div */}
-            </div>
-        )
-    }
+  list = ["Arnab", "Rajesh", "Vinod"];
+  render() {
+    return (
+      <div id="main">
+        <ol key="relativeList">
+          {this.list.map((names, index) => {
+            return <li key={"relativeListItem" + (index + 1)}>{names}</li>;
+          })}
+        </ol>
+      </div>
+    );
+  }
 }
-
 
 export default App;
